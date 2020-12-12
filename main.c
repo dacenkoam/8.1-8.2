@@ -23,23 +23,23 @@ void qsortt(int* a, int begin, int end)
     while(l <= r)
     {
 
-        while(a[l] < middle && l!=mid){ l++; comp++;}
+        while(l!=mid && a[l] < middle){ l++; comp++;}
         if (l!=mid) comp++;
 
-        while(a[r] > middle && r!= mid){ r--; comp++;}
+        while(r!= mid && a[r] > middle){ r--; comp++;}
         if (r!=mid) comp++;
 
 
         if(l < r )
         {
-            if (a[l]!=a[r]){
+            if (l!=r){
                 int tmp = a[l];
                 a[l] = a[r];
                 a[r] = tmp;
                 l++, r--;
                 change++;
             }
-            else{l++; r--;}
+            else {l++; r--;}
         }
         else if (l==r){l++;r--;}
     }
@@ -57,7 +57,7 @@ int main()
     SetConsoleCP(1251);
     while(1){
         comp=0; change=0;
-        printf("Как сортировать?\n1 - пузырёк\n2 - быстрая сортировка\n0 - никак\n");
+        printf("Как сортировать?\n2 - быстрая сортировка\n0 - никак\n");
         scanf("%d",&rrrrr);
         switch(rrrrr){
         case 1: {printf("Введите количество элементов массива\n") ;
