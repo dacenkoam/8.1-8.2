@@ -32,14 +32,14 @@ void qsortt(int* a, int begin, int end)
 
         if(l < r )
         {
-            if (l!=r){
+
                 int tmp = a[l];
                 a[l] = a[r];
                 a[r] = tmp;
                 l++, r--;
                 change++;
-            }
-            else {l++; r--;}
+
+
         }
         else if (l==r){l++;r--;}
     }
